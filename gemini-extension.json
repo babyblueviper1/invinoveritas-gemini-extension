@@ -1,6 +1,6 @@
 {
   "name": "invinoveritas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Independent verification for AI agents: a signed verdict before an irreversible action, free proof checks, a public verdict ledger, and payment receipts that say when a retry is safe.",
   "contextFileName": "GEMINI.md",
   "mcpServers": {

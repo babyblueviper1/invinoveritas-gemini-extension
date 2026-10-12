@@ -11,8 +11,10 @@ for actions that are hard to undo.
 - **When you receive a proof** (a signed verdict another agent or service attached to its output), call `verify_proof`
   before relying on it. It is free and needs no sign-in.
 - **After a verdict-governed payment, before retrying it**, call `payment_receipt` with the signed verdict and the
-  payment arguments. Retry only if `retry_state` is `not_paid_safe_to_retry`, and only with the returned
-  `idempotency_key`. Free.
+  payment arguments, plus `output_hash` (sha256 of what was delivered, if anything) and the payer's
+  `authorization_signature` if you have it. Retry the payment only if `retry_state` is `not_paid_safe_to_retry`, and
+  only with the returned `idempotency_key`. If `job_state` is `paid_no_output_recorded`, the payment went through but
+  nothing was delivered: ask for the result again, do not pay again. Free.
 - `ledger` shows the public record of past verdicts and their outcomes. Free.
 
 Do not call `review` for routine reads or reversible edits. Never present a verdict as the user's decision: it is an
