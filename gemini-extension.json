@@ -1,0 +1,12 @@
+{
+  "name": "invinoveritas",
+  "version": "1.0.0",
+  "description": "Independent verification for AI agents: a signed verdict before an irreversible action, free proof checks, a public verdict ledger, and payment receipts that say when a retry is safe.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "invinoveritas": {
+      "httpUrl": "https://api.babyblueviper.com/mcp/verify",
+      "timeout": 120000
+    }
+  }
+}
